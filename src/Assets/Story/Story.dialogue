@@ -1,0 +1,195 @@
+~ start 
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~\nBasic Commands- \nc - Continue to the next dialogue \ncls - Clear the screen\n\nType c to continue\n~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+As the trees flew by, a bead of sweat began to well up on your brow.
+Its been 10 years since the incident.  
+10 years since your childhood has ended.
+For the past couple of years, you've been getting constant nightmares of the incidents with glimpses 
+As you park outside the small desolate house, with jaded breath, you march towards the entrance. 
+
+~ axe 
+In front of the home, you see an axe in pristine condition.  Do you want to inspect it? (type yes or no)
+
+- yes
+	do Signals.show_cutscene.emit("res://src/Scenes/3DTestScene.tscn")
+	[#pause]You pick up the axe and inspect it. (To move axe, press left and right arrows.  To exit, press c)
+	you placed the axe down and continue forward.
+- no
+	You decided to not mess with it and move on.
+
+You stand in front of the old rustic door.
+There is still splatters of blood coating the grainy wood and the rusted knob.
+On the other side, you hear distant thuds.
+Like something was still wandering, looking for its next victim.
+It must still be here after all these years, waiting for you to return.
+Waiting for its final hunt.  
+
+~ door
+Do you want to continue through the front door or the back window? (type front or back)
+
+- front
+	With your frigid shaky hands, you slowly open the door.
+	However, there was nothing but darkness on the other side.  
+	do Signals.show_cutscene.emit("res://src/Scenes/DoorDeath.tscn")
+	[#pause]
+	Suddenly, a pale hand with tendril-like fingers grabs your face.
+	As you try to pull the hand off in sheer desperation, you can feel its razor sharp nails dig into your skin.
+	You can hear your skull being splintered into fragments as the hand squeezes your head like a stress ball.
+	You feel warm blood seeping out of your open wounds, slowly running down your mangled face.
+	Your vision blurs as your eyes get squeezed out of its sockets.  
+	You try to scream, but no words come out.
+	You try to kick it, but it doesn't reach.  
+	You realize that it's hopeless.  
+	As you slowly lose consciousness, you can faintly hear a chorus of laughters, mocking your demise.  
+	Then, at last, everything went dark.  
+	do Signals.game_over.emit()
+	[#pause]
+
+- back
+	You silently sneak into the overgrown backyard.
+	You see the now destroyed playground you and your family used to play in, filling you with nostalgia.
+	You glare into the depths of the forest behind your house, reminding you why you're here. 
+	Do you want to remember? (type yes or no)
+	- yes
+		\nYou were overwhelmed with flashes from the past.
+		do Signals.invert_colors.emit()  
+		You remember the moments where it all changed.
+		It was an chilly autumn day.
+		The trees were painted with splashes of orange, red, and yellow.
+		The ground was coated with crunchy dead leaves.
+		A cloud of cool mist formed everytime you exhaled.
+		You remember hearing screams of joy and laughter eminating from your dad and your sister.
+		You were playing in the backyard with them without a single care in the world.
+		Your mom was relaxing on one of the garden chairs in the yard.
+		Then, your father exclaimed, "Hey kids, how bout we play hide and seek.  I seek while you guys hide."
+		You and your sister giggled in excitement.
+		In only a second, you darted straight in the woods as your dad's and sister's voice fade into the background.
+		You remember hearing your father say was "Hey, don't go to far into the woods you hear me!"
+		As you were running, your eyes scanned for every possible hiding spot in your vision.
+		Then, as the timer reaches close to 0, you leaped directly into one of the bushes.
+		As you tried to contain your laughter, you could hear the sounds of your father yelling "Where are you" pan from one side to another. 
+		You eventually heard the shout of disappointment from your sister as she's caught.
+		While hiding, through the small openings in the bush, you saw frail boy staring blankly into your backyard.
+		Nervously, you came out of your hiding spot and asked him, "W-what are you doing."
+		In a quiet voice, he replied, "I'm just watching you guys play."
+		You got a close look at their face.  His skin was a slight hint of purple filled with scars and scratches.
+		His limbs were mangled, like they sustained a multitude of injuries.
+		You hear him murmured was "C-can I join? Please..."
+		Filled with sympathy, you lead the boy into your backyard.  
+		As the backyard comes in view, you can see your parent's expression converting from contentment to concern.
+		Your mom yelled, "Oh my god.  Is that a kid?  Hey!  Are you ok?"
+		Your family rushed up and forced the little boy to sit down.
+		Your dad ordered, "Kid, can you grab me the phone from inside please?" 
+		You rushed inside.
+		However, suddenly, you heard a barrage of blood curtling screams coming from outside.
+		You frantically ran outside with the sound of your heart beating clouding your ears, almost tripping on slippery wooden floor.
+		The screams were getting louder and louder and occasionally, you heard a distorted laugh.
+		As you pushed the doors open, to your shock, you saw a massive pool of blood covering every inch of the ground.
+		The bodies of your father and mother were mangled like puppets.
+		Your eyes darted to your sister covered head to toe with blood, crying.
+		The putrid smell filled your nostrils, causing you to collapse and vomit your insides out.
+		When you looked up, you will never forget seeing the rotten distorted corpse of your sister, smiling at you with the widest grin. 
+		Last thing this thing told you was "Thanks for letting me in."
+		As a looming darkness filled the peripheral vision, it all disappeared.
+		The blood, the monster, your parent's bodies, your sister.
+		All gone.
+		do Signals.invert_colors.emit()  
+		Hours, days, months, years, flew by.
+		Every waking moment was now filled with despair, regret, maybe even a tinge of bitter nostalgia.
+		After the accident, you tried to tell the neighbors, police, anyone what happened.
+		However, no one believed you.  Everyone thought you were insane.  Maybe you were...
+		You were placed in a mental institute for a couple of yaers, then from jumped from home to home.
+		However, even as your life sporadically changes, there is a single constant every night.
+		As you lay there sleeping, your eye are filled with flashes of your old home.
+		Your old family, friends, and the times before it came, reminding you of how you ruined everything.
+		Were they memories, visions?
+		Doesn't matter, in the end of every single one of them, you can almost hear the sounds of your sister crying for help as the beast manically laughs.
+		And, you can see the torn up door of you and your sister's bedroom.
+		To you, this was a sign that maybe you can save your sister.
+		That you can atone for your sins.
+		That you can have a family again.
+		[color=red]That's why you're here.[/color]
+	- no 
+		You do not want to relive it again.
+	Suddenly, you step on a small branch, making a crunch that reverberated throughout the entire neighborhood.
+	Your heart races as a sense of dread fills every nerve in your body.
+	Then, You faintly hear rustling of branches in the forest behind you.
+	do Signals.show_cutscene.emit("res://src/Scenes/Forest.tscn")
+	[#pause]
+	You turn around and see a tall lanky figure, hidden within the trees.
+	You can see its wide grin as it eyes out its next prey, you.
+	You see its charred purple skin, riddled with scars, scratches and blood from who knows who.
+	It sadistically inches in towards you.
+	Get inside.  Now.  
+	
+
+As you slammed the window shut, it slithered back into the dense network of trees.
+You turned around and see the contorted remains of your old home.  
+It's time for you to end this.
+#Add more dialogue here
+
+~ Path
+Where do you want to go? (type living room, bedroom, or kitchen)
+
+- living room
+	You walked into your old living room. 
+	You can see broken toys scattered all over the floor.
+	You remember you and your family playing doll house, opening presents on Christmas Day, and watching cartoons.
+	You stepped on the shattered glass from the various picture frames hung up on the moldy walls and on the .
+	Do you want to inspect them? (type yes or no)
+	
+	- yes
+		do Signals.show_cutscene.emit("res://src/Scenes/PhotoFrame.tscn")
+		[#pause]You inspected one of the old pictures on the wall.
+		
+	- no
+		You left the frame and continued on.
+	You leave the living room and go back to the hallway.
+	=> Path
+- bedroom
+	You opened the door to you and your sister's bedroom.
+	This is it.
+	However, on the other side, wasn't the remnants of your childhood.  It was something else.
+	A constantly shifting sky, folding in on itself, contorting reality itself.  
+	You can feel the coldness of the mind-shattering void envelop you as you stand there in a complete state of inertia.
+	[#falseinput=you-can't-escape]As the door seemingly draws farther and farther, you run towards its.
+	An ominous voice echoes inside your head, clouding your ears.
+	It must be the beast, playing tricks on your mind.
+	[#falseinput=it-is-all-me]You ask it, "What is this?"
+	[#falseinput=my-new-vessel]You yell in frustration, "Where or what happened to my sister!"
+	You feel tears forming.  Was she truly gone?
+	[#falseinput=it's-too-late]You begged, "GIVE HER BACK!"
+	[#falseinput=i-could-both-of-you-salvation]
+	[color=blue]just let me in[/color]
+	Suddenly, a web of arms reach out to you from the infinite space surrounding you.  
+	You try to run but the hands manage to firmly grip your arms, legs, and torso.
+	You suffocate as their grip gets tighter and tighter.
+	Your visions clouds as you lose consciousness.
+	I guess it was all in vain.
+	do wait(2)
+	[wait=2]Then, you hear the voice of your sister booming out from the void.
+	All the hands retreat back into the darkness.
+	[#falseinput=COME-BACK]A door suddenly forms underneath your feet.
+	You fall through the entryway and end up back in the front of your bedroom.
+	You leaped back as the eldritch entity springs from the door as well.
+	You feel it weakened as it swayed left and right, struggling to control its movements.
+	This is your chance.
+	FIGHT IT.  
+	=> FirstPerson
+	
+- kitchen
+	You carefully tread through the kitchen.
+	The counter was filled with rotten fruits and vegetables.
+	Flies were crawling through every crevice.
+	Feeling disgusted, you went back.
+	=> Path
+       
+=> END 
+
+~ FirstPerson
+do Signals.show_cutscene.emit("res://src/Scenes/BossBattle.tscn")
+[#pause]
+
+~ Ending
+You escaped the nightmare.
+
+=> END 

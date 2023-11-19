@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://d1y0l5e6xypdc"]
+
+[ext_resource type="PackedScene" uid="uid://dpiurn7s2a7gg" path="res://src/Assets/Objects/axe.fbx" id="1_gqial"]
+
+[node name="axe" instance=ExtResource("1_gqial")]
+
+[node name="RootNode" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0414033, -0.0188837, 0.0836048)

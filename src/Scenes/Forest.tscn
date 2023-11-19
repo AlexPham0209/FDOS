@@ -1,0 +1,317 @@
+[gd_scene load_steps=11 format=3 uid="uid://cafvi1oj43oj0"]
+
+[ext_resource type="Script" path="res://src/Script/Cutscene.gd" id="1_j53f4"]
+[ext_resource type="Texture2D" uid="uid://2cxtqyxyj7s6" path="res://src/Assets/Grass.png" id="1_q51ef"]
+[ext_resource type="Texture2D" uid="uid://3laoo0bxvrrj" path="res://src/Assets/Tree.jpg" id="2_plnh2"]
+[ext_resource type="PackedScene" uid="uid://c118pfk24vhrw" path="res://src/Assets/Objects/TheBeast.glb" id="4_o7gae"]
+[ext_resource type="Material" uid="uid://cqa6bwq0asyk4" path="res://src/Scenes/PurpleSkin.tres" id="5_w5y2t"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r88yh"]
+albedo_texture = ExtResource("1_q51ef")
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_n08ce"]
+albedo_texture = ExtResource("2_plnh2")
+uv1_scale = Vector3(1, 1.5, 1)
+uv1_offset = Vector3(-0.05, 0, 0)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 6.49802
+
+[sub_resource type="Animation" id="Animation_qq84r"]
+resource_name = "Lights"
+length = 2.5
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpotLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(1, 1.5),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 30.0]
+}
+tracks/1/type = "method"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(2.5),
+"transitions": PackedFloat32Array(1),
+"values": [{
+"args": [&"leave"],
+"method": &"emit_signal"
+}]
+}
+tracks/2/type = "animation"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("TheBeast/AnimationPlayer")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"clips": PackedStringArray("Standing"),
+"times": PackedFloat32Array(1.2)
+}
+
+[sub_resource type="Animation" id="Animation_tf0ug"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("SpotLight3D:light_energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [20.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_5cxxr"]
+_data = {
+"Lights": SubResource("Animation_qq84r"),
+"RESET": SubResource("Animation_tf0ug")
+}
+
+[node name="Forest" type="Node3D"]
+script = ExtResource("1_j53f4")
+
+[node name="Floor" type="CSGBox3D" parent="."]
+material_override = SubResource("StandardMaterial3D_r88yh")
+size = Vector3(30, 0.25, 27.7224)
+
+[node name="SpotLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.856096, 0, 0.516817, 0, 1, 0, -0.516817, 0, 0.856096, 3.33673, 0.828817, 4.1953)
+light_energy = 20.0
+spot_range = 11.6046
+spot_angle = 62.1718
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.966984, 0, 0.254838, 0, 1, 0, -0.254838, 0, 0.966984, 1.77109, 2.62777, 4.33386)
+current = true
+
+[node name="Trees" type="Node3D" parent="."]
+
+[node name="Tree9" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.391301, 0, 0, 0, 3, 0, 0, 0, 0.37185, -3.38835, 0.0327983, -0.819415)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.12881, 3.55012, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree4" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.391301, 0, 0, 0, 3, 0, 0, 0, 0.37185, 2.80431, 0.0327983, -1.21364)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.12881, 3.55012, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree5" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.391301, 0, 0, 0, 3, 0, 0, 0, 0.37185, -2.91457, 0.0327983, -5.01391)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.12881, 3.55012, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree6" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.390289, 0.215589, 0, -0.02812, 2.99224, 0, 0, 0, 0.37185, -1.67763, 0.0327983, -7.10849)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.08477, 3.41948, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree7" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.391298, -0.0112051, 0, 0.00146151, 2.99998, 0, 0, 0, 0.37185, 0.871118, 0.0327983, -6.51459)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.10246, 3.3536, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree19" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.391301, 0, 0, 0, 3, 0, 0, 0, 0.37185, -9.29317, 0.0327983, 1.58296)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.12881, 3.55012, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree20" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.391301, 0, 0, 0, 3, 0, 0, 0, 0.37185, -10.9713, 0.0327983, 1.58296)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.12881, 3.55012, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree21" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.390289, 0.215589, 0, -0.02812, 2.99224, 0, 0, 0, 0.37185, -8.37261, 0.0327983, -0.511621)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.08477, 3.41948, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree22" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.389908, -0.25286, 0, 0.0329814, 2.98932, 0, 0, 0, 0.37185, -5.98563, 0.0327983, 0.0822785)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.10246, 3.3536, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree23" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.391301, 0, 0, 0, 3, 0, 0, 0, 0.37185, -4.77028, 0.0689778, 0.424514)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.12881, 3.55012, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree24" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.391301, 0, 0, 0, 3, 0, 0, 0, 0.37185, -10.4975, 0.0327983, -3.51613)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.12881, 3.55012, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree25" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.390289, 0.215589, 0, -0.02812, 2.99224, 0, 0, 0, 0.37185, -9.26054, 0.0327983, -5.61071)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.08477, 3.41948, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree26" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.389908, -0.25286, 0, 0.0329814, 2.98932, 0, 0, 0, 0.37185, -6.71179, 0.0327983, -5.01681)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.10246, 3.3536, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree8" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.391301, 0, 0, 0, 3, 0, 0, 0, 0.37185, 3.07815, 0.0327983, -3.91036)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.12881, 3.55012, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree10" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.391301, 0, 0, 0, 3, 0, 0, 0, 0.37185, 6.27024, 0.0327983, -0.819415)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.12881, 3.55012, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree11" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.391301, 0, 0, 0, 3, 0, 0, 0, 0.37185, 4.59214, 0.0327983, -0.819415)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.12881, 3.55012, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree12" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.390289, 0.215589, 0, -0.02812, 2.99224, 0, 0, 0, 0.37185, 7.1908, 0.0327983, -2.914)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.08477, 3.41948, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree13" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.389908, -0.25286, 0, 0.0329814, 2.98932, 0, 0, 0, 0.37185, 9.57778, 0.0327983, -2.3201)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.10246, 3.3536, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree14" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.391301, 0, 0, 0, 3, 0, 0, 0, 0.37185, 10.7848, 0.0327983, -1.21364)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.12881, 3.55012, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree15" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.391301, 0, 0, 0, 3, 0, 0, 0, 0.37185, 5.06593, 0.0327983, -3.51613)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.12881, 3.55012, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree16" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.390289, 0.215589, 0, -0.02812, 2.99224, 0, 0, 0, 0.37185, 6.30287, 0.0327983, -5.61071)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.08477, 3.41948, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree17" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.389908, -0.25286, 0, 0.0329814, 2.98932, 0, 0, 0, 0.37185, 8.85161, 0.0327983, -5.01681)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.10246, 3.3536, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="Tree18" type="CSGPolygon3D" parent="Trees"]
+transform = Transform3D(0.391301, 0, 0, 0, 3, 0, 0, 0, 0.37185, 11.0587, 0.0327983, -3.91036)
+polygon = PackedVector2Array(0, 0, 0, 1, 0.0417546, 1.02901, 1.12881, 3.55012, 1, 0)
+mode = 1
+spin_degrees = 360.0
+spin_sides = 12
+material = SubResource("StandardMaterial3D_n08ce")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Lights"
+libraries = {
+"": SubResource("AnimationLibrary_5cxxr")
+}
+
+[node name="TheBeast" parent="." instance=ExtResource("4_o7gae")]
+transform = Transform3D(0.140318, 0, 0.0530163, 0, 0.15, 0, -0.0530163, 0, 0.140318, 0.0870175, 3.32738, -0.201725)
+
+[node name="Skeleton3D" parent="TheBeast/Armature" index="0"]
+bones/0/position = Vector3(0, -2.37756, 0)
+bones/0/rotation = Quaternion(0.162771, -0.0637218, -0.0268302, 0.984238)
+bones/1/rotation = Quaternion(-0.142368, 0.0883513, -0.00849615, 0.985826)
+bones/2/rotation = Quaternion(-2.91038e-10, 1.1985e-07, -4.07454e-10, 1)
+bones/3/rotation = Quaternion(-0.214298, -0.0503056, 0.960222, 0.171812)
+bones/4/rotation = Quaternion(0.377414, -0.0378843, 0.128766, 0.916266)
+bones/5/rotation = Quaternion(0.0158121, -2.50816e-08, -0.00144558, 0.999874)
+bones/7/rotation = Quaternion(-0.344588, 0.0884803, -0.904049, 0.236909)
+bones/8/rotation = Quaternion(0.257006, 0.905237, 0.335775, 0.0418178)
+bones/9/rotation = Quaternion(-0.0112282, -0.639665, 0.0112268, 0.76849)
+bones/11/rotation = Quaternion(0.647171, -0.162215, -0.739425, 0.0900401)
+bones/12/rotation = Quaternion(-0.000292893, -0.000148023, -0.00211287, 0.999998)
+bones/13/rotation = Quaternion(0.00577167, 0.0139536, 0.66531, 0.746415)
+bones/14/rotation = Quaternion(0.636872, -0.092704, -0.721685, 0.254892)
+bones/15/rotation = Quaternion(0.0230792, 0.000146887, -0.166484, 0.985774)
+bones/16/rotation = Quaternion(-0.00573782, -0.013993, 0.66531, 0.746414)
+bones/17/position = Vector3(-4.56403, -19.9477, -0.180161)
+bones/18/position = Vector3(-8.1663, -6.40703, 1.09468)
+bones/20/position = Vector3(4.18797, -19.9477, -0.180161)
+bones/21/position = Vector3(8.46434, -6.73304, 1.33704)
+
+[node name="Body" parent="TheBeast/Armature/Skeleton3D" index="0"]
+material_override = ExtResource("5_w5y2t")
+
+[editable path="TheBeast"]

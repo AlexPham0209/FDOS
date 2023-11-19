@@ -1,0 +1,16 @@
+[gd_scene load_steps=4 format=3 uid="uid://byguje6awmah8"]
+
+[ext_resource type="Shader" path="res://src/Assets/Shaders/AsciiShader.gdshader" id="1_ct502"]
+[ext_resource type="Texture2D" uid="uid://cv4qek7wf006j" path="res://src/Assets/Fonts/ascii.png" id="2_p5imh"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_ei2w7"]
+shader = ExtResource("1_ct502")
+shader_parameter/ascii_size = Vector2(8, 16)
+shader_parameter/available_columns = 10
+shader_parameter/max_columns = 16
+shader_parameter/ascii_tex = ExtResource("2_p5imh")
+
+[node name="Shader" type="ColorRect"]
+material = SubResource("ShaderMaterial_ei2w7")
+offset_right = 1280.0
+offset_bottom = 720.0

@@ -1,0 +1,21 @@
+[gd_scene load_steps=4 format=3 uid="uid://dyfqfjyst148r"]
+
+[ext_resource type="Script" path="res://src/Script/InspectionCutscene.gd" id="1_u21ij"]
+[ext_resource type="PackedScene" uid="uid://c6d3mypvveply" path="res://src/Assets/Objects/PhotoFrame.glb" id="2_xwlg0"]
+[ext_resource type="Script" path="res://src/Script/ObjectInspection.gd" id="3_ueln0"]
+
+[node name="3D Scene" type="Node3D"]
+script = ExtResource("1_u21ij")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.999993, 0.0025967, -0.00279293, -0.000401877, 0.800043, 0.599943, 0.00379233, -0.599937, 0.800038, -0.161807, 1.51544, 3.20381)
+current = true
+
+[node name="DirectionalLight3D" type="SpotLight3D" parent="."]
+transform = Transform3D(0.521323, 0.802242, -0.290913, -0.205889, 0.449077, 0.869448, 0.82815, -0.393367, 0.399287, -0.929539, 3.62095, 1.0754)
+light_energy = 10.0
+light_size = 3.0
+
+[node name="PhotoFrame" parent="." instance=ExtResource("2_xwlg0")]
+transform = Transform3D(0.0340658, 0.0613617, -0.49505, -0.396877, 0.303943, 0.0103637, 0.302206, 0.392241, 0.0694141, -0.281664, -0.234345, 0.994896)
+script = ExtResource("3_ueln0")

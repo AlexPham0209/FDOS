@@ -1,0 +1,94 @@
+[gd_scene load_steps=13 format=3 uid="uid://bx0atkmu8cvd"]
+
+[ext_resource type="Script" path="res://src/Script/BossBattle.gd" id="1_3uond"]
+[ext_resource type="PackedScene" uid="uid://dc161lqh4yt1v" path="res://src/Scenes/Player.tscn" id="1_65rgi"]
+[ext_resource type="PackedScene" uid="uid://bojv17ek3uvnx" path="res://src/Assets/Objects/House.glb" id="3_ahdn3"]
+[ext_resource type="Material" uid="uid://bngjqhcg40fw3" path="res://src/Scenes/WallShader.tres" id="4_je3wi"]
+[ext_resource type="Texture2D" uid="uid://c3fkds3ihh7mi" path="res://src/Assets/Objects/WoodFine0090_1_350.jpg" id="5_3fjxx"]
+[ext_resource type="PackedScene" uid="uid://di4qftctmtufc" path="res://src/Scenes/hep_burn_sofa.tscn" id="7_70fn7"]
+[ext_resource type="Script" path="res://src/Scenes/Exit.gd" id="7_ogn3r"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6bsql"]
+sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
+
+[sub_resource type="Sky" id="Sky_mf6lf"]
+sky_material = SubResource("ProceduralSkyMaterial_6bsql")
+
+[sub_resource type="Environment" id="Environment_eicq5"]
+background_mode = 2
+sky = SubResource("Sky_mf6lf")
+tonemap_mode = 2
+glow_enabled = true
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5f8k7"]
+albedo_texture = ExtResource("5_3fjxx")
+uv1_scale = Vector3(0.05, 0.05, 0.1)
+uv1_triplanar = true
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_e8gte"]
+size = Vector3(2.24663, 6.45526, 1.84809)
+
+[node name="BossBattle" type="Node3D"]
+script = ExtResource("1_3uond")
+
+[node name="Environment" type="Node3D" parent="."]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
+transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
+shadow_enabled = true
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
+environment = SubResource("Environment_eicq5")
+
+[node name="Player" parent="." instance=ExtResource("1_65rgi")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.01839, 1.58178, -6.28453)
+sensitivity = 0.25
+
+[node name="House" parent="." instance=ExtResource("3_ahdn3")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 5.06111, 0, -5.79456)
+
+[node name="Walls" parent="House" index="0"]
+material_override = ExtResource("4_je3wi")
+
+[node name="Floor" parent="House" index="1"]
+material_override = SubResource("StandardMaterial3D_5f8k7")
+
+[node name="Lights" type="Node3D" parent="House"]
+transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -25.3056, 0, 28.9728)
+
+[node name="OmniLight3D" type="OmniLight3D" parent="House/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.174, 2.34428, 3.40471)
+light_energy = 0.5
+omni_range = 10.0
+
+[node name="OmniLight3D2" type="OmniLight3D" parent="House/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48352, 1.49139, -6.97942)
+light_energy = 0.5
+omni_range = 10.0
+
+[node name="OmniLight3D4" type="OmniLight3D" parent="House/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7366, 3.12325, 2.52461)
+light_energy = 0.25
+omni_range = 7.5
+
+[node name="OmniLight3D5" type="OmniLight3D" parent="House/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73464, 1.96619, 10.6944)
+light_energy = 0.5
+omni_range = 10.0
+
+[node name="HepBurn_Sofa" parent="." instance=ExtResource("7_70fn7")]
+transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.32353, 0.0698183, -10.3256)
+
+[node name="Exit" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90632, 1.86097, 13.5828)
+script = ExtResource("7_ogn3r")
+title = "Ending"
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Exit"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00643182, 0.292341, -0.0469365)
+shape = SubResource("BoxShape3D_e8gte")
+
+[connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
+
+[editable path="House"]

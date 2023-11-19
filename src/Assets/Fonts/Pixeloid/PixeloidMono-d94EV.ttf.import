@@ -1,0 +1,38 @@
+[remap]
+
+importer="font_data_dynamic"
+type="FontFile"
+uid="uid://bl6om3tlote5l"
+path="res://.godot/imported/PixeloidMono-d94EV.ttf-81d804f76d9dfe1fb9b2995927c2ab8c.fontdata"
+
+[deps]
+
+source_file="res://src/Assets/Fonts/Pixeloid/PixeloidMono-d94EV.ttf"
+dest_files=["res://.godot/imported/PixeloidMono-d94EV.ttf-81d804f76d9dfe1fb9b2995927c2ab8c.fontdata"]
+
+[params]
+
+Rendering=null
+antialiasing=1
+generate_mipmaps=false
+multichannel_signed_distance_field=false
+msdf_pixel_range=8
+msdf_size=48
+allow_system_fallback=true
+force_autohinter=false
+hinting=1
+subpixel_positioning=1
+oversampling=0.0
+Fallbacks=null
+fallbacks=[]
+Compress=null
+compress=true
+preload=[{
+"chars": [],
+"glyphs": [],
+"name": "New Configuration",
+"size": Vector2i(16, 0)
+}]
+language_support={}
+script_support={}
+opentype_features={}

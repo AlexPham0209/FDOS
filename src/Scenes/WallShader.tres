@@ -1,0 +1,9 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://bngjqhcg40fw3"]
+
+[ext_resource type="Texture2D" uid="uid://uaycfryig2dj" path="res://src/Assets/Objects/WallTexture.jpg" id="1_cuqak"]
+
+[resource]
+albedo_texture = ExtResource("1_cuqak")
+uv1_scale = Vector3(0.2, 0.2, 0.2)
+uv1_triplanar = true
+uv1_triplanar_sharpness = 0.176777
