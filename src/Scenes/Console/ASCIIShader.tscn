@@ -1,14 +1,14 @@
 [gd_scene load_steps=4 format=3 uid="uid://byguje6awmah8"]
 
-[ext_resource type="Shader" path="res://src/Assets/Shaders/AsciiShader.gdshader" id="1_ct502"]
-[ext_resource type="Texture2D" uid="uid://cv4qek7wf006j" path="res://src/Assets/Fonts/ascii.png" id="2_p5imh"]
+[ext_resource type="Shader" path="res://src/Assets/Shaders/AsciiShader.gdshader" id="1_jhlpp"]
+[ext_resource type="Texture2D" uid="uid://cv4qek7wf006j" path="res://src/Assets/Fonts/ascii.png" id="2_7auwq"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_ei2w7"]
-shader = ExtResource("1_ct502")
+shader = ExtResource("1_jhlpp")
 shader_parameter/ascii_size = Vector2(8, 16)
 shader_parameter/available_columns = 10
 shader_parameter/max_columns = 16
-shader_parameter/ascii_tex = ExtResource("2_p5imh")
+shader_parameter/ascii_tex = ExtResource("2_7auwq")
 
 [node name="Shader" type="ColorRect"]
 material = SubResource("ShaderMaterial_ei2w7")

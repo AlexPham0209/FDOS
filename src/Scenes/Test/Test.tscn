@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://cmaugykn48q8k"]
 
-[ext_resource type="PackedScene" uid="uid://7osvxvx16dni" path="res://src/Scenes/3DConsoleBackground.tscn" id="1_cujix"]
-[ext_resource type="PackedScene" uid="uid://byguje6awmah8" path="res://src/Scenes/ASCIIShader.tscn" id="2_3ushx"]
+[ext_resource type="PackedScene" uid="uid://7osvxvx16dni" path="res://src/Scenes/Console/3DConsoleBackground.tscn" id="1_cujix"]
+[ext_resource type="PackedScene" uid="uid://byguje6awmah8" path="res://src/Scenes/Console/ASCIIShader.tscn" id="2_3ushx"]
 [ext_resource type="FontFile" uid="uid://cwefth4qqscni" path="res://src/Assets/Fonts/Pixeloid/PixeloidSans-mLxMm.ttf" id="4_eu85u"]
 
 [node name="Test" type="Node2D"]

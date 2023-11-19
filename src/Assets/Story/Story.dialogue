@@ -10,7 +10,7 @@ As you park outside the small desolate house, with jaded breath, you march towar
 In front of the home, you see an axe in pristine condition.  Do you want to inspect it? (type yes or no)
 
 - yes
-	do Signals.show_cutscene.emit("res://src/Scenes/3DTestScene.tscn")
+	do Signals.show_cutscene.emit("res://src/Scenes/3D/3DTestScene.tscn")
 	[#pause]You pick up the axe and inspect it. (To move axe, press left and right arrows.  To exit, press c)
 	you placed the axe down and continue forward.
 - no
@@ -29,7 +29,7 @@ Do you want to continue through the front door or the back window? (type front o
 - front
 	With your frigid shaky hands, you slowly open the door.
 	However, there was nothing but darkness on the other side.  
-	do Signals.show_cutscene.emit("res://src/Scenes/DoorDeath.tscn")
+	do Signals.show_cutscene.emit("res://src/Scenes/3D/DoorDeath.tscn")
 	[#pause]
 	Suddenly, a pale hand with tendril-like fingers grabs your face.
 	As you try to pull the hand off in sheer desperation, you can feel its razor sharp nails dig into your skin.
@@ -113,7 +113,7 @@ Do you want to continue through the front door or the back window? (type front o
 	Suddenly, you step on a small branch, making a crunch that reverberated throughout the entire neighborhood.
 	Your heart races as a sense of dread fills every nerve in your body.
 	Then, You faintly hear rustling of branches in the forest behind you.
-	do Signals.show_cutscene.emit("res://src/Scenes/Forest.tscn")
+	do Signals.show_cutscene.emit("res://src/Scenes/3D/Forest.tscn")
 	[#pause]
 	You turn around and see a tall lanky figure, hidden within the trees.
 	You can see its wide grin as it eyes out its next prey, you.
@@ -138,7 +138,7 @@ Where do you want to go? (type living room, bedroom, or kitchen)
 	Do you want to inspect them? (type yes or no)
 	
 	- yes
-		do Signals.show_cutscene.emit("res://src/Scenes/PhotoFrame.tscn")
+		do Signals.show_cutscene.emit("res://src/Scenes/3D/PhotoFrame.tscn")
 		[#pause]You inspected one of the old pictures on the wall.
 		
 	- no
@@ -186,7 +186,7 @@ Where do you want to go? (type living room, bedroom, or kitchen)
 => END 
 
 ~ FirstPerson
-do Signals.show_cutscene.emit("res://src/Scenes/BossBattle.tscn")
+do Signals.show_cutscene.emit("res://src/Scenes/3D/BossBattle.tscn")
 [#pause]
 
 ~ Ending

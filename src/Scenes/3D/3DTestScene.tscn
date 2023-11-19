@@ -1,19 +1,19 @@
 [gd_scene load_steps=4 format=3 uid="uid://ds8vp3muv005m"]
 
-[ext_resource type="PackedScene" uid="uid://dpiurn7s2a7gg" path="res://src/Assets/Objects/axe.fbx" id="1_0ubg1"]
-[ext_resource type="Script" path="res://src/Script/InspectionCutscene.gd" id="1_m742g"]
-[ext_resource type="Script" path="res://src/Script/ObjectInspection.gd" id="2_pqy4m"]
+[ext_resource type="Script" path="res://src/Script/Cutscenes/InspectionCutscene.gd" id="1_bdo3c"]
+[ext_resource type="PackedScene" uid="uid://dpiurn7s2a7gg" path="res://src/Assets/Objects/axe.fbx" id="2_2g15p"]
+[ext_resource type="Script" path="res://src/Script/Cutscenes/ObjectInspection.gd" id="3_g7gsq"]
 
 [node name="3D Scene" type="Node3D"]
-script = ExtResource("1_m742g")
+script = ExtResource("1_bdo3c")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.999993, 0.0025967, -0.00279293, -0.000401877, 0.800043, 0.599943, 0.00379233, -0.599937, 0.800038, -0.161807, 1.51544, 3.20381)
 current = true
 
-[node name="axe" parent="." instance=ExtResource("1_0ubg1")]
+[node name="axe" parent="." instance=ExtResource("2_2g15p")]
 transform = Transform3D(1, 0, 0, 0, 0.721796, -0.692105, 0, 0.692105, 0.721796, -1.04358, 0, -0.0536712)
-script = ExtResource("2_pqy4m")
+script = ExtResource("3_g7gsq")
 
 [node name="DirectionalLight3D" type="SpotLight3D" parent="."]
 transform = Transform3D(0.521323, 0.802242, -0.290913, -0.205889, 0.449077, 0.869448, 0.82815, -0.393367, 0.399287, -0.929539, 3.62095, 1.0754)

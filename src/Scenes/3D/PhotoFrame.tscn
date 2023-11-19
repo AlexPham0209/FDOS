@@ -1,8 +1,8 @@
 [gd_scene load_steps=4 format=3 uid="uid://dyfqfjyst148r"]
 
-[ext_resource type="Script" path="res://src/Script/InspectionCutscene.gd" id="1_u21ij"]
+[ext_resource type="Script" path="res://src/Script/Cutscenes/InspectionCutscene.gd" id="1_u21ij"]
 [ext_resource type="PackedScene" uid="uid://c6d3mypvveply" path="res://src/Assets/Objects/PhotoFrame.glb" id="2_xwlg0"]
-[ext_resource type="Script" path="res://src/Script/ObjectInspection.gd" id="3_ueln0"]
+[ext_resource type="Script" path="res://src/Script/Cutscenes/ObjectInspection.gd" id="3_ueln0"]
 
 [node name="3D Scene" type="Node3D"]
 script = ExtResource("1_u21ij")

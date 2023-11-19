@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dgjd4tmy880s3"
-path="res://.godot/imported/bedroom-door.jpg-46a8cebf81c3ff804b29155aa8310aff.ctex"
+uid="uid://wq1bvofg5dju"
+path="res://.godot/imported/TheBeast.png-ad6be09f8ee4677f99e980906d1b1574.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Assets/bedroom-door.jpg"
-dest_files=["res://.godot/imported/bedroom-door.jpg-46a8cebf81c3ff804b29155aa8310aff.ctex"]
+source_file="res://src/Assets/Sprites/TheBeast.png"
+dest_files=["res://.godot/imported/TheBeast.png-ad6be09f8ee4677f99e980906d1b1574.ctex"]
 
 [params]
 

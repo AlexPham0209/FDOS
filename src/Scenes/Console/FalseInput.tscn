@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://dy6ou1rkd71i5"]
 
-[ext_resource type="Script" path="res://src/Script/FalseInput.gd" id="1_6xwhf"]
-[ext_resource type="FontFile" uid="uid://cwefth4qqscni" path="res://src/Assets/Fonts/Pixeloid/PixeloidSans-mLxMm.ttf" id="2_36p7k"]
+[ext_resource type="Script" path="res://src/Script/Console/FalseInput.gd" id="1_kr1m6"]
+[ext_resource type="FontFile" uid="uid://cwefth4qqscni" path="res://src/Assets/Fonts/Pixeloid/PixeloidSans-mLxMm.ttf" id="2_6ngqs"]
 
 [node name="FalseInput" type="Control"]
 custom_minimum_size = Vector2(1280, 34)
@@ -10,13 +10,13 @@ anchor_right = 1.0
 anchor_bottom = 0.049
 offset_bottom = -1.28
 size_flags_vertical = 3
-script = ExtResource("1_6xwhf")
+script = ExtResource("1_kr1m6")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
 offset_right = 112.0
 offset_bottom = 33.0
-theme_override_fonts/font = ExtResource("2_36p7k")
+theme_override_fonts/font = ExtResource("2_6ngqs")
 theme_override_font_sizes/font_size = 24
 text = "C:\\FDOS>"
 
@@ -25,5 +25,5 @@ layout_mode = 0
 offset_left = 111.0
 offset_right = 1278.0
 offset_bottom = 35.0
-theme_override_fonts/font = ExtResource("2_36p7k")
+theme_override_fonts/font = ExtResource("2_6ngqs")
 theme_override_font_sizes/font_size = 24

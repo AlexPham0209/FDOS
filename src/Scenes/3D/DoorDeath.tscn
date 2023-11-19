@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://lcc3mio61vrg"]
 
-[ext_resource type="Script" path="res://src/Script/Cutscene.gd" id="1_1llfi"]
+[ext_resource type="Script" path="res://src/Script/Cutscenes/Cutscene.gd" id="1_1llfi"]
 [ext_resource type="Texture2D" uid="uid://duqag8lek8gb" path="res://src/Assets/Objects/Hand-cc89879cadec9b3c8eaaabbdb7b6903a_Arms.png" id="1_nbwdb"]
 [ext_resource type="Texture2D" uid="uid://c55j6hw6i4eyp" path="res://src/Assets/Objects/Hand-cc89879cadec9b3c8eaaabbdb7b6903a_Arms_n.png" id="2_i064b"]
 

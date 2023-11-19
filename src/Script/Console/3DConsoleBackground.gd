@@ -1,4 +1,4 @@
-extends "res://src/Script/Command.gd"
+extends "res://src/Script/Console/Command.gd"
 class_name ConsoleImage
 
 @onready var viewport : SubViewport = $Viewport

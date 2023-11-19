@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://cafvi1oj43oj0"]
 
-[ext_resource type="Script" path="res://src/Script/Cutscene.gd" id="1_j53f4"]
-[ext_resource type="Texture2D" uid="uid://2cxtqyxyj7s6" path="res://src/Assets/Grass.png" id="1_q51ef"]
-[ext_resource type="Texture2D" uid="uid://3laoo0bxvrrj" path="res://src/Assets/Tree.jpg" id="2_plnh2"]
+[ext_resource type="Script" path="res://src/Script/Cutscenes/Cutscene.gd" id="1_j53f4"]
+[ext_resource type="Texture2D" uid="uid://2cxtqyxyj7s6" path="res://src/Assets/Sprites/Grass.png" id="1_q51ef"]
+[ext_resource type="Texture2D" uid="uid://3laoo0bxvrrj" path="res://src/Assets/Sprites/Tree.jpg" id="2_plnh2"]
 [ext_resource type="PackedScene" uid="uid://c118pfk24vhrw" path="res://src/Assets/Objects/TheBeast.glb" id="4_o7gae"]
-[ext_resource type="Material" uid="uid://cqa6bwq0asyk4" path="res://src/Scenes/PurpleSkin.tres" id="5_w5y2t"]
+[ext_resource type="Material" uid="uid://cqa6bwq0asyk4" path="res://src/Assets/Materials/PurpleSkin.tres" id="5_w5y2t"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_r88yh"]
 albedo_texture = ExtResource("1_q51ef")

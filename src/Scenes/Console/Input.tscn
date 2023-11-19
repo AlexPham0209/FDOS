@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://ds746tv0dxehl"]
 
-[ext_resource type="Script" path="res://src/Script/Input.gd" id="1_22l8d"]
+[ext_resource type="Script" path="res://src/Script/Console/Input.gd" id="1_22l8d"]
 [ext_resource type="FontFile" uid="uid://cwefth4qqscni" path="res://src/Assets/Fonts/Pixeloid/PixeloidSans-mLxMm.ttf" id="1_sgen3"]
 
 [sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_60j7j"]

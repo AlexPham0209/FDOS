@@ -1,9 +1,9 @@
 [gd_scene load_steps=9 format=3 uid="uid://bvwv6c4fjosr3"]
 
-[ext_resource type="Script" path="res://src/Script/Console.gd" id="1_f6y7u"]
-[ext_resource type="Script" path="res://src/Script/Commands.gd" id="1_mky1b"]
+[ext_resource type="Script" path="res://src/Script/Console/Console.gd" id="1_f6y7u"]
+[ext_resource type="Script" path="res://src/Script/Console/Commands.gd" id="1_mky1b"]
 [ext_resource type="Script" path="res://src/Script/ScrollContainer.gd" id="2_4dk3d"]
-[ext_resource type="PackedScene" uid="uid://ds746tv0dxehl" path="res://src/Scenes/Input.tscn" id="3_xwo2f"]
+[ext_resource type="PackedScene" uid="uid://ds746tv0dxehl" path="res://src/Scenes/Console/Input.tscn" id="3_xwo2f"]
 [ext_resource type="Shader" path="res://src/Assets/Shaders/InvertColor.gdshader" id="5_4bqgd"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3i727"]

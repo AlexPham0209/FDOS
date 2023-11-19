@@ -1,10 +1,10 @@
 extends VBoxContainer
 
-var input = preload("res://src/Scenes/Input.tscn")
-var false_input_instance = preload("res://src/Scenes/FalseInput.tscn")
-var message = preload("res://src/Scenes/Message.tscn")
-var environment = preload("res://src/Scenes/3DConsoleBackground.tscn")
-var game_over_screen = preload("res://src/Scenes/GameOver.tscn")
+var input = preload("res://src/Scenes/Console/Input.tscn")
+var false_input_instance = preload("res://src/Scenes/Console/FalseInput.tscn")
+var message = preload("res://src/Scenes/Console/Message.tscn")
+var environment = preload("res://src/Scenes/Console/3DConsoleBackground.tscn")
+var game_over_screen = preload("res://src/Scenes/Console/GameOver.tscn")
 
 
 #Connect the enter command to commands container

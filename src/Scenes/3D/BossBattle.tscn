@@ -1,12 +1,12 @@
 [gd_scene load_steps=13 format=3 uid="uid://bx0atkmu8cvd"]
 
-[ext_resource type="Script" path="res://src/Script/BossBattle.gd" id="1_3uond"]
-[ext_resource type="PackedScene" uid="uid://dc161lqh4yt1v" path="res://src/Scenes/Player.tscn" id="1_65rgi"]
-[ext_resource type="PackedScene" uid="uid://bojv17ek3uvnx" path="res://src/Assets/Objects/House.glb" id="3_ahdn3"]
-[ext_resource type="Material" uid="uid://bngjqhcg40fw3" path="res://src/Scenes/WallShader.tres" id="4_je3wi"]
-[ext_resource type="Texture2D" uid="uid://c3fkds3ihh7mi" path="res://src/Assets/Objects/WoodFine0090_1_350.jpg" id="5_3fjxx"]
-[ext_resource type="PackedScene" uid="uid://di4qftctmtufc" path="res://src/Scenes/hep_burn_sofa.tscn" id="7_70fn7"]
-[ext_resource type="Script" path="res://src/Scenes/Exit.gd" id="7_ogn3r"]
+[ext_resource type="Script" path="res://src/Script/First Person/BossBattle.gd" id="1_nv6pm"]
+[ext_resource type="PackedScene" uid="uid://dc161lqh4yt1v" path="res://src/Scenes/Player.tscn" id="2_ithnw"]
+[ext_resource type="PackedScene" uid="uid://bojv17ek3uvnx" path="res://src/Assets/Objects/House.glb" id="3_gktu3"]
+[ext_resource type="Material" uid="uid://bngjqhcg40fw3" path="res://src/Assets/Materials/WallShader.tres" id="4_qgso7"]
+[ext_resource type="Texture2D" uid="uid://c3fkds3ihh7mi" path="res://src/Assets/Objects/WoodFine0090_1_350.jpg" id="5_bnh47"]
+[ext_resource type="PackedScene" uid="uid://di4qftctmtufc" path="res://src/Scenes/hep_burn_sofa.tscn" id="6_70wd0"]
+[ext_resource type="Script" path="res://src/Script/First Person/Exit.gd" id="7_24knm"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6bsql"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -22,7 +22,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5f8k7"]
-albedo_texture = ExtResource("5_3fjxx")
+albedo_texture = ExtResource("5_bnh47")
 uv1_scale = Vector3(0.05, 0.05, 0.1)
 uv1_triplanar = true
 
@@ -30,7 +30,7 @@ uv1_triplanar = true
 size = Vector3(2.24663, 6.45526, 1.84809)
 
 [node name="BossBattle" type="Node3D"]
-script = ExtResource("1_3uond")
+script = ExtResource("1_nv6pm")
 
 [node name="Environment" type="Node3D" parent="."]
 
@@ -41,15 +41,15 @@ shadow_enabled = true
 [node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
 environment = SubResource("Environment_eicq5")
 
-[node name="Player" parent="." instance=ExtResource("1_65rgi")]
+[node name="Player" parent="." instance=ExtResource("2_ithnw")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.01839, 1.58178, -6.28453)
 sensitivity = 0.25
 
-[node name="House" parent="." instance=ExtResource("3_ahdn3")]
+[node name="House" parent="." instance=ExtResource("3_gktu3")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, 5.06111, 0, -5.79456)
 
 [node name="Walls" parent="House" index="0"]
-material_override = ExtResource("4_je3wi")
+material_override = ExtResource("4_qgso7")
 
 [node name="Floor" parent="House" index="1"]
 material_override = SubResource("StandardMaterial3D_5f8k7")
@@ -77,12 +77,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73464, 1.96619, 10.6944)
 light_energy = 0.5
 omni_range = 10.0
 
-[node name="HepBurn_Sofa" parent="." instance=ExtResource("7_70fn7")]
+[node name="HepBurn_Sofa" parent="." instance=ExtResource("6_70wd0")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.32353, 0.0698183, -10.3256)
 
 [node name="Exit" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90632, 1.86097, 13.5828)
-script = ExtResource("7_ogn3r")
+script = ExtResource("7_24knm")
 title = "Ending"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exit"]

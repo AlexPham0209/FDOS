@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm5ra3x7ynnte"
-path="res://.godot/imported/TheBeastNoTeeth.png-c3c4f3d86c1240b5c22336ff05ca871e.ctex"
+uid="uid://c2s7ibglu2exr"
+path="res://.godot/imported/Door2.png-a25550fc57b90ad0ab785e4bf592740b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://src/Assets/TheBeastNoTeeth.png"
-dest_files=["res://.godot/imported/TheBeastNoTeeth.png-c3c4f3d86c1240b5c22336ff05ca871e.ctex"]
+source_file="res://src/Assets/Sprites/Door2.png"
+dest_files=["res://.godot/imported/Door2.png-a25550fc57b90ad0ab785e4bf592740b.ctex"]
 
 [params]
 
