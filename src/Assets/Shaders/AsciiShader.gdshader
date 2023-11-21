@@ -11,7 +11,7 @@ uniform int max_columns = 16;
 void fragment( )
 {
 	//Averages uv so that 
-	vec2 screen_uv = floor( SCREEN_UV / SCREEN_PIXEL_SIZE / ascii_size ) * SCREEN_PIXEL_SIZE * ascii_size;
+	vec2 screen_uv = floor(SCREEN_UV / SCREEN_PIXEL_SIZE / ascii_size ) * SCREEN_PIXEL_SIZE * ascii_size;
 	vec2 diff = ascii_size * SCREEN_PIXEL_SIZE;
 	
 	//Averages surrounding colors

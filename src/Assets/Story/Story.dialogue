@@ -190,6 +190,18 @@ do Signals.show_cutscene.emit("res://src/Scenes/3D/BossBattle.tscn")
 [#pause]
 
 ~ Ending
-You escaped the nightmare.
+Like a fly trying to escape, you try to open the door.
+However, the door gets jammed.
+As the monster reaches its hands out towards you, the door burst open.
+You jumped head first through the front door.
+As you tripped on the pavement of the road, you can feel your heart beating out of your chest.
+Then, the realization hit.
+You didn't do anything.
+You didn't save anyone.
+You try to force yourself to go back, but your body is paralyzed in fear.
+You don't have the strength.
+As you lay there crying, you look up.
+And, you see through the dirty windows, the bastard giving you a wide smile.
+do Signals.bad_ending.emit()
 
 => END 

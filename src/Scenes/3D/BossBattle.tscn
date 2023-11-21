@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://bx0atkmu8cvd"]
+[gd_scene load_steps=12 format=3 uid="uid://bx0atkmu8cvd"]
 
 [ext_resource type="Script" path="res://src/Script/First Person/BossBattle.gd" id="1_nv6pm"]
 [ext_resource type="PackedScene" uid="uid://dc161lqh4yt1v" path="res://src/Scenes/Player.tscn" id="2_ithnw"]
@@ -7,19 +7,8 @@
 [ext_resource type="Texture2D" uid="uid://c3fkds3ihh7mi" path="res://src/Assets/Objects/WoodFine0090_1_350.jpg" id="5_bnh47"]
 [ext_resource type="PackedScene" uid="uid://di4qftctmtufc" path="res://src/Scenes/hep_burn_sofa.tscn" id="6_70wd0"]
 [ext_resource type="Script" path="res://src/Script/First Person/Exit.gd" id="7_24knm"]
-
-[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_6bsql"]
-sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-ground_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
-
-[sub_resource type="Sky" id="Sky_mf6lf"]
-sky_material = SubResource("ProceduralSkyMaterial_6bsql")
-
-[sub_resource type="Environment" id="Environment_eicq5"]
-background_mode = 2
-sky = SubResource("Sky_mf6lf")
-tonemap_mode = 2
-glow_enabled = true
+[ext_resource type="PackedScene" uid="uid://bctwhi3pvycld" path="res://src/Assets/Objects/Photo.glb" id="8_w4hj0"]
+[ext_resource type="PackedScene" uid="uid://itb60mm7bg0b" path="res://src/Assets/Objects/Table.glb" id="9_divjm"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_5f8k7"]
 albedo_texture = ExtResource("5_bnh47")
@@ -38,9 +27,6 @@ script = ExtResource("1_nv6pm")
 transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
 shadow_enabled = true
 
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
-environment = SubResource("Environment_eicq5")
-
 [node name="Player" parent="." instance=ExtResource("2_ithnw")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.01839, 1.58178, -6.28453)
 sensitivity = 0.25
@@ -54,6 +40,9 @@ material_override = ExtResource("4_qgso7")
 [node name="Floor" parent="House" index="1"]
 material_override = SubResource("StandardMaterial3D_5f8k7")
 
+[node name="Ceiling" parent="House" index="2"]
+material_override = ExtResource("4_qgso7")
+
 [node name="Lights" type="Node3D" parent="House"]
 transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -25.3056, 0, 28.9728)
 
@@ -64,6 +53,10 @@ omni_range = 10.0
 
 [node name="OmniLight3D2" type="OmniLight3D" parent="House/Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48352, 1.49139, -6.97942)
+omni_range = 10.0
+
+[node name="OmniLight3D3" type="OmniLight3D" parent="House/Lights"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.84574, 1.49139, -6.97942)
 light_energy = 0.5
 omni_range = 10.0
 
@@ -88,6 +81,12 @@ title = "Ending"
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exit"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00643182, 0.292341, -0.0469365)
 shape = SubResource("BoxShape3D_e8gte")
+
+[node name="Photo" parent="." instance=ExtResource("8_w4hj0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6924, 2.62723, -6.49768)
+
+[node name="Table" parent="." instance=ExtResource("9_divjm")]
+transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.3, 0, -0.4, 0, -1.74846e-08, -3.47502, 1.32852, -4.88536)
 
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
 

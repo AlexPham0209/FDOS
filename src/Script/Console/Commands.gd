@@ -5,6 +5,7 @@ var false_input_instance = preload("res://src/Scenes/Console/FalseInput.tscn")
 var message = preload("res://src/Scenes/Console/Message.tscn")
 var environment = preload("res://src/Scenes/Console/3DConsoleBackground.tscn")
 var game_over_screen = preload("res://src/Scenes/Console/GameOver.tscn")
+var bad_ending_screen = preload("res://src/Scenes/Console/BadEnding.tscn")
 
 
 #Connect the enter command to commands container
@@ -16,6 +17,7 @@ func _ready():
 	StoryManager.display_text.connect(show_story)
 	Signals.show_cutscene.connect(show_cutscene)
 	Signals.game_over.connect(game_over)
+	Signals.bad_ending.connect(bad_ending)
 	
 
 #Enter the current command typed out and parses the contents
@@ -36,13 +38,6 @@ func enter_command(message : String):
 	if (handle_commands(args)):
 		return 
 		
-	#Handles the story aspects of the game
-#	if (StoryManager.choices_dict.size() > 0 and StoryManager.choices_dict.has(args[0].to_lower())):
-#		var id = StoryManager.choices_dict[args[0].to_lower()]
-#		StoryManager.continue_story(id)
-#
-#	elif (StoryManager.choices_dict.size() == 0 and args[0].to_lower() == "c"):
-#		StoryManager.continue_story()
 	
 	var has_options = StoryManager.choices_dict.size() > 0 and StoryManager.choices_dict.has(args[0].to_lower())
 	var id = StoryManager.choices_dict[args[0].to_lower()] if has_options else null
@@ -111,6 +106,13 @@ func game_over():
 	clear()
 	Global.start = false
 	self.add_child(create(game_over_screen))
+	self.add_child(create(input))
+	pass
+
+#Note: Possibly just create an end screen function	
+func bad_ending():
+	Global.start = false
+	self.add_child(create(bad_ending_screen))
 	self.add_child(create(input))
 	pass
 	
