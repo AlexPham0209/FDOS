@@ -41,7 +41,7 @@ Do you want to continue through the front door or the back window? (type front o
 	You realize that it's hopeless.  
 	As you slowly lose consciousness, you can faintly hear a chorus of laughters, mocking your demise.  
 	Then, at last, everything went dark.  
-	do Signals.game_over.emit()
+	do Signals.show_end_screen.emit("res://src/Scenes/Console/GameOver.tscn")
 	[#pause]
 
 - back
@@ -189,7 +189,7 @@ Where do you want to go? (type living room, bedroom, or kitchen)
 do Signals.show_cutscene.emit("res://src/Scenes/3D/BossBattle.tscn")
 [#pause]
 
-~ Ending
+~ BadEnding
 Like a fly trying to escape, you try to open the door.
 However, the door gets jammed.
 As the monster reaches its hands out towards you, the door burst open.
@@ -202,6 +202,6 @@ You try to force yourself to go back, but your body is paralyzed in fear.
 You don't have the strength.
 As you lay there crying, you look up.
 And, you see through the dirty windows, the bastard giving you a wide smile.
-do Signals.bad_ending.emit()
+do Signals.show_end_screen.emit("res://src/Scenes/Console/BadEnding.tscn")
 
 => END 

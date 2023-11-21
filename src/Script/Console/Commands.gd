@@ -4,8 +4,6 @@ var input = preload("res://src/Scenes/Console/Input.tscn")
 var false_input_instance = preload("res://src/Scenes/Console/FalseInput.tscn")
 var message = preload("res://src/Scenes/Console/Message.tscn")
 var environment = preload("res://src/Scenes/Console/3DConsoleBackground.tscn")
-var game_over_screen = preload("res://src/Scenes/Console/GameOver.tscn")
-var bad_ending_screen = preload("res://src/Scenes/Console/BadEnding.tscn")
 
 
 #Connect the enter command to commands container
@@ -16,8 +14,7 @@ func _ready():
 		command.enter_command.connect(enter_command)
 	StoryManager.display_text.connect(show_story)
 	Signals.show_cutscene.connect(show_cutscene)
-	Signals.game_over.connect(game_over)
-	Signals.bad_ending.connect(bad_ending)
+	Signals.show_end_screen.connect(show_end_screen)
 	
 
 #Enter the current command typed out and parses the contents
@@ -102,19 +99,13 @@ func show_cutscene(path : String, ascii_x = 8, ascii_y = 16):
 	self.add_child(instance)
 	instance.add_scene.call_deferred(path, ascii_x, ascii_y)
 		
-func game_over():
-	clear()
+func show_end_screen(path : String):
 	Global.start = false
-	self.add_child(create(game_over_screen))
+	var screen = load(path)
+	self.add_child(create(screen))
 	self.add_child(create(input))
 	pass
 
-#Note: Possibly just create an end screen function	
-func bad_ending():
-	Global.start = false
-	self.add_child(create(bad_ending_screen))
-	self.add_child(create(input))
-	pass
 	
 func create(scene : PackedScene):
 	var instance : Command = scene.instantiate() as Command
