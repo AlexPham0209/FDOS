@@ -21,12 +21,6 @@ size = Vector3(2.24663, 6.45526, 1.84809)
 [node name="BossBattle" type="Node3D"]
 script = ExtResource("1_nv6pm")
 
-[node name="Environment" type="Node3D" parent="."]
-
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
-transform = Transform3D(-0.866023, -0.433016, 0.250001, 0, 0.499998, 0.866027, -0.500003, 0.749999, -0.43301, 0, 0, 0)
-shadow_enabled = true
-
 [node name="Player" parent="." instance=ExtResource("2_ithnw")]
 transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 3.01839, 1.58178, -6.28453)
 sensitivity = 0.25
@@ -43,50 +37,52 @@ material_override = SubResource("StandardMaterial3D_5f8k7")
 [node name="Ceiling" parent="House" index="2"]
 material_override = ExtResource("4_qgso7")
 
-[node name="Lights" type="Node3D" parent="House"]
-transform = Transform3D(5, 0, 0, 0, 5, 0, 0, 0, 5, -25.3056, 0, 28.9728)
+[node name="Lights" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.00136e-05, 0, 0)
 
-[node name="OmniLight3D" type="OmniLight3D" parent="House/Lights"]
+[node name="OmniLight3D" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.174, 2.34428, 3.40471)
 light_energy = 0.5
 omni_range = 10.0
 
-[node name="OmniLight3D2" type="OmniLight3D" parent="House/Lights"]
+[node name="OmniLight3D2" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.48352, 1.49139, -6.97942)
 omni_range = 10.0
 
-[node name="OmniLight3D3" type="OmniLight3D" parent="House/Lights"]
+[node name="OmniLight3D3" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 6.84574, 1.49139, -6.97942)
 light_energy = 0.5
 omni_range = 10.0
 
-[node name="OmniLight3D4" type="OmniLight3D" parent="House/Lights"]
+[node name="OmniLight3D4" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.7366, 3.12325, 2.52461)
 light_energy = 0.25
 omni_range = 7.5
 
-[node name="OmniLight3D5" type="OmniLight3D" parent="House/Lights"]
+[node name="OmniLight3D5" type="OmniLight3D" parent="Lights"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.73464, 1.96619, 10.6944)
 light_energy = 0.5
 omni_range = 10.0
 
-[node name="HepBurn_Sofa" parent="." instance=ExtResource("6_70wd0")]
+[node name="Decorations" type="Node3D" parent="."]
+
+[node name="Table" parent="Decorations" instance=ExtResource("9_divjm")]
+transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.3, 0, -0.4, 0, -1.74846e-08, -3.47502, 1.32852, -4.88536)
+
+[node name="Photo" parent="Decorations" instance=ExtResource("8_w4hj0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6924, 2.62723, -6.49768)
+
+[node name="HepBurn_Sofa" parent="Decorations" instance=ExtResource("6_70wd0")]
 transform = Transform3D(0.2, 0, 0, 0, 0.2, 0, 0, 0, 0.2, -2.32353, 0.0698183, -10.3256)
 
 [node name="Exit" type="Area3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.90632, 1.86097, 13.5828)
 script = ExtResource("7_24knm")
-title = "Ending"
+title = "BadEnding"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Exit"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00643182, 0.292341, -0.0469365)
 shape = SubResource("BoxShape3D_e8gte")
-
-[node name="Photo" parent="." instance=ExtResource("8_w4hj0")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.6924, 2.62723, -6.49768)
-
-[node name="Table" parent="." instance=ExtResource("9_divjm")]
-transform = Transform3D(-1.74846e-08, 0, 0.4, 0, 0.3, 0, -0.4, 0, -1.74846e-08, -3.47502, 1.32852, -4.88536)
 
 [connection signal="body_entered" from="Exit" to="Exit" method="_on_body_entered"]
 
